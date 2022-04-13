@@ -3,7 +3,26 @@ import PropTypes from 'prop-types';
 import Input from './Input';
 
 class Form extends Component {
+  constructor(props) {
+    super(props);
+
+    this.onInputChange = this.onInputChange.bind(this);
+
+    this.state = {
+      cardName: '',
+    };
+  }
+
+  onInputChange(event) {
+    // console.log(event.target.value);
+
+    this.setState({
+      cardName: event.target.value,
+    });
+  }
+
   render() {
+    console.log(this.state.inputName);
     const {
       cardName,
       cardDescription,
@@ -19,6 +38,7 @@ class Form extends Component {
       onSaveButtonClick,
     } = this.props;
     return (
+
       <form className="form-container">
         <div className="container-name-description">
           <div>
@@ -29,7 +49,7 @@ class Form extends Component {
               htmlFor="name-input"
               label="Nome"
               value={ cardName }
-              onChange={ onInputChange }
+              onChange={ this.onInputChange }
             />
           </div>
           <div>
@@ -66,7 +86,7 @@ class Form extends Component {
             htmlFor="attr2-input"
             label="Attr02"
             value={ cardAttr2 }
-            onChange={ onInputChange }
+            onChange={ this.onInputChange }
           />
           <Input
             className="input-attr"
@@ -75,7 +95,7 @@ class Form extends Component {
             htmlFor="attr3-input"
             label="Attr03"
             value={ cardAttr3 }
-            onChange={ onInputChange }
+            onChange={ this.onInputChange }
           />
         </div>
         <div className="container-input-image">
@@ -86,7 +106,7 @@ class Form extends Component {
             htmlFor="imageInput"
             label="Imagem"
             value={ cardImage }
-            onChange={ onInputChange }
+            onChange={ this.onInputChange }
           />
         </div>
 
@@ -98,7 +118,7 @@ class Form extends Component {
             data-testid="rare-input"
             id="rare_input"
             value={ cardRare }
-            onChange={ onInputChange }
+            onChange={ this.onInputChange }
           >
             <option>normal</option>
             <option>raro</option>
@@ -113,7 +133,7 @@ class Form extends Component {
             htmlFor="trunfo-input"
             label=""
             checked={ cardTrunfo }
-            onChange={ onInputChange }
+            onChange={ this.onInputChange }
           />
           Super Trunfo
           <br />
