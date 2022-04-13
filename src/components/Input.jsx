@@ -14,6 +14,7 @@ class Input extends Component {
       disabled,
       onClick,
       className,
+      name,
     } = this.props;
     return (
       <label htmlFor={ htmlFor }>
@@ -29,6 +30,7 @@ class Input extends Component {
           checked={ checked }
           disabled={ disabled }
           onClick={ onClick }
+          name={ name }
         />
       </label>
     );
@@ -49,6 +51,7 @@ Input.propTypes = {
   checked: PropTypes.bool.isRequired,
   disabled: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default Input;
