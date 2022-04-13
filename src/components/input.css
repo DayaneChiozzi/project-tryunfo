@@ -1,0 +1,85 @@
+body {
+  background: #fafafa;
+}
+
+.h1 {
+  margin-left: 100px;
+}
+
+.form-container {
+  align-items: baseline;
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+
+}
+
+.container-name-description {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+}
+
+.input-name {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  height: 37px;
+  margin-bottom: 10px;
+  outline: none;
+  width: 355px;
+}
+
+.input-description {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  height: 80px;
+  outline: none;
+  width: 355px;
+}
+
+.input-attr {
+  height: 37px;
+  width: 355px;
+}
+
+.container-input-image {
+  align-items: center;
+  display: flex;
+  height: 60px;
+}
+
+.input-image {
+  height: 20px;
+  width: 355px;
+}
+
+.input-rare {
+  background: white;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  height: 20px;
+  outline: none;
+  width: 355px;
+}
+
+.btn {
+  background: #003be5;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  height: 40px;
+  margin-bottom: 60px;
+  width: 115px;
+
+}
+
+.input-generic-attr {
+  display: flex;
+  flex-direction: column;
+  height: 220px;
+  justify-content: space-between;
+
+}

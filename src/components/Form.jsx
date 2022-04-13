@@ -19,34 +19,39 @@ class Form extends Component {
       onSaveButtonClick,
     } = this.props;
     return (
-      <form>
-        <section>
-          <Input
-            dataTestid="name-input"
-            type="text"
-            htmlFor="name-input"
-            label="Nome"
-            value={ cardName }
-            onChange={ onInputChange }
-          />
-        </section>
-
-        <section>
-          <label htmlFor="descricao">
-            Descricão
-            <textarea
-              data-testid="description-input"
-              htmlFor="descricao"
-              value={ cardDescription }
+      <form className="form-container">
+        <div className="container-name-description">
+          <div>
+            <Input
+              className="input-name"
+              dataTestid="name-input"
+              type="text"
+              htmlFor="name-input"
+              label="Nome"
+              value={ cardName }
               onChange={ onInputChange }
-              rows="4"
-              cols="50"
             />
-          </label>
-        </section>
+          </div>
+          <div>
+            <label htmlFor="descricao">
+              Descricão
+              <br />
+              <textarea
+                className="input-description"
+                data-testid="description-input"
+                htmlFor="descricao"
+                value={ cardDescription }
+                onChange={ onInputChange }
+                rows="4"
+                cols="50"
+              />
+            </label>
+          </div>
+        </div>
 
-        <section>
+        <div className="input-generic-attr">
           <Input
+            className="input-attr"
             dataTestid="attr1-input"
             type="number"
             htmlFor="attr1-input"
@@ -54,8 +59,8 @@ class Form extends Component {
             value={ cardAttr1 }
             onChange={ onInputChange }
           />
-
           <Input
+            className="input-attr"
             dataTestid="attr2-input"
             type="number"
             htmlFor="attr2-input"
@@ -63,8 +68,8 @@ class Form extends Component {
             value={ cardAttr2 }
             onChange={ onInputChange }
           />
-
           <Input
+            className="input-attr"
             dataTestid="attr3-input"
             type="number"
             htmlFor="attr3-input"
@@ -72,20 +77,24 @@ class Form extends Component {
             value={ cardAttr3 }
             onChange={ onInputChange }
           />
-        </section>
-
-        <Input
-          dataTestid="image-input"
-          type="text"
-          htmlFor="imageInput"
-          label="Imagem"
-          value={ cardImage }
-          onChange={ onInputChange }
-        />
+        </div>
+        <div className="container-input-image">
+          <Input
+            className="input-image"
+            dataTestid="image-input"
+            type="text"
+            htmlFor="imageInput"
+            label="Imagem"
+            value={ cardImage }
+            onChange={ onInputChange }
+          />
+        </div>
 
         <label htmlFor="rare-input">
           Raridade
+          <br />
           <select
+            className="input-rare"
             data-testid="rare-input"
             id="rare_input"
             value={ cardRare }
@@ -102,18 +111,23 @@ class Form extends Component {
             dataTestid="trunfo-input"
             type="checkbox"
             htmlFor="trunfo-input"
-            label="Super Trunfo"
+            label=""
             checked={ cardTrunfo }
             onChange={ onInputChange }
           />
-          <Input
-            dataTestid="save-button"
+          Super Trunfo
+          <br />
+          <br />
+          <button
             type="button"
-            htmlFor="save-button"
-            label="Salvar"
+            className="btn"
+            data-testid="save-button"
             disabled={ isSaveButtonDisabled }
             onClick={ onSaveButtonClick }
-          />
+          >
+            Salvar
+          </button>
+
         </section>
       </form>
     );

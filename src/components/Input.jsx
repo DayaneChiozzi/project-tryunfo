@@ -13,11 +13,14 @@ class Input extends Component {
       checked,
       disabled,
       onClick,
+      className,
     } = this.props;
     return (
       <label htmlFor={ htmlFor }>
         {label}
+        <br />
         <input
+          className={ className }
           data-testid={ dataTestid }
           type={ type }
           htmlFor={ htmlFor }
@@ -40,6 +43,7 @@ Input.propTypes = {
     PropTypes.number,
   ]).isRequired,
   dataTestid: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
   checked: PropTypes.bool.isRequired,
