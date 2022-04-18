@@ -12,10 +12,49 @@ class App extends Component {
       cardAttr1: '',
       cardAttr2: '',
       cardAttr3: '',
+      cardRare: 'normal',
+      cards: [],
+    };
+
+    this.onInputChange = this.onInputChange.bind(this);
+    this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
+  }
+
+  onSaveButtonClick() {
+    // event.preventDefault();
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+    } = this.state;
+
+    const cardsProperty = {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+    };
+
+    this.setState((prevState) => ({
+      cards: [...prevState.cards, cardsProperty],
+    }));
+
+    this.setState({
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
       cardImage: '',
       cardRare: 'normal',
-    };
-    this.onInputChange = this.onInputChange.bind(this);
+    });
   }
 
   onInputChange({ target: { name, value } }) {
@@ -61,13 +100,20 @@ class App extends Component {
         return true;
       }
     }
-
     return (
       <div>
         <h1 className="h1">Tryunfo</h1>
         <Form
           onInputChange={ this.onInputChange }
           isSaveButtonDisabled={ verifyButton() }
+          onSaveButtonClick={ this.onSaveButtonClick }
+          cardName={ cardName }
+          cardDescription={ cardDescription }
+          cardAttr1={ cardAttr1 }
+          cardAttr2={ cardAttr2 }
+          cardAttr3={ cardAttr3 }
+          cardImage={ cardImage }
+          cardRare={ cardRare }
 
         />
         <Card
