@@ -1,34 +1,87 @@
-/* .cartao {
-  background-color: white;
-  border-radius: 1rem;
-  box-shadow: 0 0 5px 3px #ffff00c9;
-  color: black;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  margin-right: 1rem;
-  padding: 0.5rem;
-  text-align: center;
-  width: 20rem;
+.card_proprirties {
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+  display: flex;
+  height: 549px;
+  justify-content: center;
+  left: 874px;
+  position: absolute;
+  top: 283px;
+  width: 368px;
 }
 
-.cartao:last-child {
-  margin-right: 0;
+.card_proprirties2 {
+  align-items: center;
+  background: #036b52;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 529px;
+  justify-content: center;
+  width: 348px;
 }
 
-.cartao h2 {
-  font-size: 2rem;
-  margin: 0.8rem 0;
+.titleName {
+  background: #023031;
+  height: 40px;
+  width: 317px;
+
+
 }
 
 
-.cartao img {
-  width: 100%;
+.imageCard {
+  height: 278px;
+  left: 900px;
+  position: absolute;
+  top: 312px;
+  width: 317px;
+
+
 }
 
-.cartao p {
-  margin: 0.8rem 0;
-}
+/*
+.descripitionCard {
 
-.cartao h3 {
-  font-size: 1.1rem;
+
 } */
+
+.container_attr {
+  background: #fff;
+  height: 197.5px;
+  left: 1217px;
+  position: absolute;
+  top: 808px;
+  transform: rotate(-180deg);
+  width: 317px;
+}
+
+
+.attr01_02 {
+  color: #3d495c;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  height: 24px;
+  left: calc(50% - 212px/2 + 313px);
+  line-height: 150%;
+  position: absolute;
+  top: calc(50% - 24px/2 - 1561px);
+  width: 212px;
+
+}
+
+.attr03 {
+  color: #3d495c;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  height: 24px;
+  left: calc(50% - 216px/2 + 315px);
+  line-height: 150%;
+  position: absolute;
+  top: calc(50% - 24px/2 - 1489px);
+  width: 216px;
+}

@@ -3,26 +3,7 @@ import PropTypes from 'prop-types';
 import Input from './Input';
 
 class Form extends Component {
-  constructor(props) {
-    super(props);
-
-    this.onInputChange = this.onInputChange.bind(this);
-
-    this.state = {
-      cardName: '',
-    };
-  }
-
-  onInputChange(event) {
-    // console.log(event.target.value);
-
-    this.setState({
-      cardName: event.target.value,
-    });
-  }
-
   render() {
-    console.log(this.state.inputName);
     const {
       cardName,
       cardDescription,
@@ -43,13 +24,14 @@ class Form extends Component {
         <div className="container-name-description">
           <div>
             <Input
+              name="cardName"
               className="input-name"
               dataTestid="name-input"
               type="text"
               htmlFor="name-input"
               label="Nome"
               value={ cardName }
-              onChange={ this.onInputChange }
+              onChange={ onInputChange }
             />
           </div>
           <div>
@@ -57,6 +39,7 @@ class Form extends Component {
               Descricão
               <br />
               <textarea
+                name="cardDescription"
                 className="input-description"
                 data-testid="description-input"
                 htmlFor="descricao"
@@ -71,6 +54,7 @@ class Form extends Component {
 
         <div className="input-generic-attr">
           <Input
+            name="cardAttr1"
             className="input-attr"
             dataTestid="attr1-input"
             type="number"
@@ -80,33 +64,36 @@ class Form extends Component {
             onChange={ onInputChange }
           />
           <Input
+            name="cardAttr2"
             className="input-attr"
             dataTestid="attr2-input"
             type="number"
             htmlFor="attr2-input"
             label="Attr02"
             value={ cardAttr2 }
-            onChange={ this.onInputChange }
+            onChange={ onInputChange }
           />
           <Input
+            name="cardAttr3"
             className="input-attr"
             dataTestid="attr3-input"
             type="number"
             htmlFor="attr3-input"
             label="Attr03"
             value={ cardAttr3 }
-            onChange={ this.onInputChange }
+            onChange={ onInputChange }
           />
         </div>
         <div className="container-input-image">
           <Input
+            name="cardImage"
             className="input-image"
             dataTestid="image-input"
             type="text"
             htmlFor="imageInput"
             label="Imagem"
             value={ cardImage }
-            onChange={ this.onInputChange }
+            onChange={ onInputChange }
           />
         </div>
 
@@ -114,11 +101,12 @@ class Form extends Component {
           Raridade
           <br />
           <select
+            name="cardRare"
             className="input-rare"
             data-testid="rare-input"
             id="rare_input"
             value={ cardRare }
-            onChange={ this.onInputChange }
+            onChange={ onInputChange }
           >
             <option>normal</option>
             <option>raro</option>
@@ -128,18 +116,20 @@ class Form extends Component {
 
         <section>
           <Input
+            name="cardTrunfo"
             dataTestid="trunfo-input"
             type="checkbox"
             htmlFor="trunfo-input"
             label=""
             checked={ cardTrunfo }
-            onChange={ this.onInputChange }
+            onChange={ onInputChange }
           />
           Super Trunfo
           <br />
           <br />
           <button
-            type="button"
+            name="SaveButton"
+            type="submit"
             className="btn"
             data-testid="save-button"
             disabled={ isSaveButtonDisabled }

@@ -16,45 +16,49 @@ class Card extends Component {
     } = this.props;
     return (
 
-      <div className="cartao">
-        <div>
-          <h3 data-testid="name-card">{ cardName }</h3>
-        </div>
-        <div>
-          <img src={ cardImage } alt={ cardName } data-testid="image-card" />
-        </div>
-        <div>
-          <span data-testid="description-card">
-            { cardDescription }
-          </span>
-        </div>
-        <div>
-          <div>
-            <p data-testid="attr1-card">
-              {cardAttr1}
-            </p>
+      <div className="card_proprirties">
+        <div className="card_proprirties2">
+
+          <div className="titleName">
+            <h3 data-testid="name-card">{ cardName }</h3>
+          </div>
+          <div className="imageCard">
+            <img src={ cardImage } alt={ cardName } data-testid="image-card" />
+          </div>
+          <div className="descripitionCard">
+            <span data-testid="description-card">
+              { cardDescription }
+            </span>
+          </div>
+          <div className="container_attr">
+            <div className="attr01_02">
+              <p data-testid="attr1-card">
+                {cardAttr1}
+              </p>
+            </div>
+            <div className="attr01_02">
+              <p data-testid="attr2-card">
+                {cardAttr2}
+              </p>
+            </div>
+            <div className="attr03">
+              <p data-testid="attr3-card">
+                {cardAttr3}
+              </p>
+            </div>
           </div>
           <div>
-            <p data-testid="attr2-card">
-              {cardAttr2}
+            <p data-testid="rare-card">
+              {cardRare}
             </p>
-          </div>
-          <div>
-            <p data-testid="attr3-card">
-              {cardAttr3}
-            </p>
+            {
+              cardTrunfo
+                ? <p data-testid="trunfo-card">Super Trunfo</p>
+                : null
+            }
           </div>
         </div>
-        <div>
-          <p data-testid="rare-card">
-            {cardRare}
-          </p>
-          {
-            cardTrunfo
-              ? <p data-testid="trunfo-card">Super Trunfo</p>
-              : null
-          }
-        </div>
+
       </div>
 
     );
